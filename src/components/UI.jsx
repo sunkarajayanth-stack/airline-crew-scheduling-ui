@@ -1,0 +1,4 @@
+import { motion } from 'framer-motion';
+export const Card=({children,className=''})=><motion.div whileHover={{y:-2}} className={`glass rounded-2xl p-4 shadow-xl shadow-cyan-500/5 ${className}`}>{children}</motion.div>;
+export const Badge=({children,tone='blue'})=>{const map={blue:'bg-cyan-500/20 text-cyan-300',green:'bg-emerald-500/20 text-emerald-300',yellow:'bg-amber-500/20 text-amber-300',red:'bg-red-500/20 text-red-300'};return <span className={`px-2 py-1 rounded-full text-xs font-medium ${map[tone]}`}>{children}</span>};
+export const Button=({children,variant='primary',...props})=>{const v=variant==='ghost'?'bg-slate-800 hover:bg-slate-700':'bg-cyan-500 hover:bg-cyan-400 text-slate-900';return <button className={`px-3 py-2 rounded-xl text-sm font-semibold transition ${v}`} {...props}>{children}</button>};
