@@ -1,0 +1,5 @@
+import React,{useState} from 'react';import ReactDOM from 'react-dom/client';import { BrowserRouter,Routes,Route } from 'react-router-dom';import './index.css';
+import { Layout } from './components/Layout';
+import { AdminPage, AssignmentsPage, CompliancePage, ConflictsPage, CrewPage, Dashboard, DutyHoursPage, LeavePage, RosterPage } from './pages/pages';
+function App(){const [collapsed,setCollapsed]=useState(false);return <BrowserRouter><Layout collapsed={collapsed} setCollapsed={setCollapsed}><Routes><Route path='/' element={<Dashboard/>}/><Route path='/crew' element={<CrewPage/>}/><Route path='/roster' element={<RosterPage/>}/><Route path='/duty-hours' element={<DutyHoursPage/>}/><Route path='/leave' element={<LeavePage/>}/><Route path='/conflicts' element={<ConflictsPage/>}/><Route path='/assignments' element={<AssignmentsPage/>}/><Route path='/compliance' element={<CompliancePage/>}/><Route path='/admin' element={<AdminPage/>}/></Routes></Layout></BrowserRouter>}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
